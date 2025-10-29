@@ -1,0 +1,49 @@
+/* page wrapper to add spacing around card */
+.todo-page {
+  padding: 15px;
+  position: relative;
+}
+
+/* main card container */
+.todo-card {
+  background: #412B6B;
+  color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* header section */
+.todo-header {
+  background: #6b21a8; /* eggplant purple */
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.todo-header .todo-title { color: #ffffff; margin: 0; font-size: 22px; font-weight: 700; }
+
+.todo-clock { color: #ffffff; text-align: right; }
+.todo-clock .time { font-weight: 700; }
+.todo-clock .date { opacity: 0.9; font-size: 12px; }
+
+/* body section where AddTodo and table live */
+.todo-body {
+  background: transparent;
+  padding: 16px 20px 20px;
+}
+
+/* full-screen background pattern layer */
+.bg-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+

@@ -1,0 +1,37 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    container_name: mongo-container
+    networks:
+      - my-network
+    volumes:
+      - ./mongo-init:/docker-entrypoint-initdb.d
+
+  backend:
+    build: ./backend
+    container_name: node-container
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URL: mongodb://mongo:27017/mydb
+    networks:
+      - my-network
+    volumes:
+      - ./backend/src:/app/src
+
+  frontend:
+    build: ./frontend
+    container_name: react-container
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+    networks:
+      - my-network
+    volumes:
+      - ./frontend/src:/app/src
+
+networks:
+  my-network:
+    driver: bridge

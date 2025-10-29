@@ -1,0 +1,62 @@
+.filter-card {
+  --login-box-color: #211832;
+  --input-color: #3a3a3a;
+  --button-color: #373737;
+
+  background: var(--login-box-color);
+  border-radius: 24px;
+  padding: 15px;
+  margin: 15px 0;
+  box-sizing: border-box;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    0 0 8px rgba(255, 255, 255, 0.1),
+    0 0 16px rgba(255, 255, 255, 0.08),
+    inset 0 40px 60px -8px rgba(255, 255, 255, 0.12),
+    inset 4px 0 12px -6px rgba(255, 255, 255, 0.12),
+    inset 0 0 12px -4px rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.filter-title {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.filter-row {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.filter-field { flex: 1 1 200px; min-width: 200px; }
+.filter-label { display: block; font-weight: 700; margin-bottom: 8px; color: #ffffff; }
+.filter-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: var(--input-color);
+  color: #ffffff;
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.filter-input:focus {
+  border: 1px solid #ffffff;
+}
+.filter-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 640px) {
+  .filter-card { margin: 10px 0; padding: 12px; }
+  .filter-row { flex-direction: column; gap: 12px; }
+  .filter-field { flex: 1 1 auto; min-width: 100%; }
+}
+
+

@@ -1,0 +1,173 @@
+.tasks-card {
+  --login-box-color: #211832;
+  --input-color: #3a3a3a;
+  --button-color: #373737;
+
+  background: var(--login-box-color);
+  border-radius: 24px;
+  padding: 15px;
+  margin: 15px 0;
+  box-sizing: border-box;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    0 0 8px rgba(255, 255, 255, 0.1),
+    0 0 16px rgba(255, 255, 255, 0.08),
+    inset 0 40px 60px -8px rgba(255, 255, 255, 0.12),
+    inset 4px 0 12px -6px rgba(255, 255, 255, 0.12),
+    inset 0 0 12px -4px rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.tasks-table { 
+  width: 100%; 
+  border-collapse: separate; 
+  border-spacing: 0; 
+  background: transparent;
+  color: #e5e7eb;
+}
+
+.tasks-table th, .tasks-table td { 
+  padding: 10px 12px; 
+  text-align: center; 
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  vertical-align: middle;
+}
+
+.tasks-table thead { 
+  background: rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.tasks-table thead th {
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* vertical separators for header and body cells */
+.tasks-table th:not(:last-child),
+.tasks-table td:not(:last-child) {
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+/* zebra rows + hover */
+.tasks-table tbody tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+.tasks-table tbody tr:hover td { background: rgba(255,255,255,0.04); }
+
+ 
+.row-actions { 
+  display: flex; 
+  gap: 8px; 
+}
+
+.btn { 
+  position: relative;
+  padding: 10px 18px; 
+  border: none; 
+  background: transparent; 
+  border-radius: 50px; 
+  cursor: pointer; 
+  color: #ffffff;
+  overflow: hidden;
+}
+.btn::before { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #ff6b6b); z-index: -2; filter: blur(10px); transition: transform 1.5s ease-in-out; }
+.btn:hover::before { transform: rotate(180deg); }
+.btn::after { content: ""; position: absolute; inset: 3px; background: #000000; border-radius: 47px; z-index: -1; filter: blur(2px); }
+
+
+
+.btn.danger { 
+  background: #ef4444; 
+  color: #fff; 
+  border-color: #dc2626; 
+}
+
+/* status colors */
+.status-cell { white-space: nowrap; }
+.status-cell.completed { background: transparent; color: inherit; }
+
+/* pulsing status dot */
+.status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; position: relative; margin-right: 8px; vertical-align: middle; }
+.status-dot.done { background: #22c55e; color: #22c55e; }
+.status-dot.pending { background: #ef4444; color: #ef4444; }
+.status-dot::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  opacity: 0.6;
+  transform: translate(-50%, -50%);
+  animation: pulse 1.4s ease-out infinite;
+}
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(0.99); opacity: 0.7; }
+  70% { transform: translate(-50%, -50%) scale(1.02); opacity: 0.15; }
+  100% { transform: translate(-50%, -50%) scale(1.03); opacity: 0; }
+}
+
+/* combined dates column */
+.col-dates { white-space: normal; }
+.date-line { line-height: 1.2; }
+.col-dates .date-line + .date-line { margin-top: 2px; opacity: 0.85; }
+
+/* widen task column and allow wrapping */
+.tasks-table .col-task { width: 40%; min-width: 280px; white-space: normal; overflow-wrap: anywhere; }
+
+/* left-align only the Task column body cells */
+.tasks-table td.col-task { text-align: left; }
+
+/* left-align Status column body cells */
+.tasks-table td.status-cell { text-align: left; }
+
+.muted { color: #6b7280; }
+
+/* horizontal scroll wrapper as rounded table container */
+.table-wrapper { 
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch; 
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+}
+
+/* pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.pagination-summary { color: #d1d5db; font-size: 12px; }
+.pagination-controls { display: flex; gap: 6px; }
+.page-btn {
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.page-btn.active { background: #211832; color: #fff; border-color: #412B6B; }
+.page-btn.arrow { font-weight: 700; }
+.page-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* icon delete button */
+.icon-btn.trash {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #dc2626;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* header/body separator for table rows */
+.tasks-table tbody tr:first-child td {
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+
