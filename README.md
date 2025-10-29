@@ -75,8 +75,8 @@ This application is built using a microservices architecture with three separate
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd my-todo
+   git clone https://github.com/mahmudshahedi/fullstack-todo
+   cd fullstack-todo
    ```
 
 2. **Build and start all containers**
