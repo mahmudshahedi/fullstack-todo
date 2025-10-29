@@ -124,7 +124,7 @@ All containers are configured with volume mounts for hot-reloading during develo
 
 For a comprehensive video tutorial and walkthrough of the application, visit:
 
-**🎥 YouTube Channel**: [https://www.youtube.com/@webtern-js](https://www.youtube.com/@webtern-js)
+**🎥 YouTube Channel**: https://youtu.be/cp0jD2RW8to
 
 ## 🤝 Contributing
 
