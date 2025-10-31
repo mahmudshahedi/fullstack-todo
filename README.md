@@ -125,7 +125,7 @@ All containers are configured with volume mounts for hot-reloading during develo
 For a comprehensive video tutorial and walkthrough of the application, visit:
 
 **🎥 YouTube Channel**: https://youtu.be/cp0jD2RW8to
-**🔗 LinkedIn**: https://www.linkedin.com/in/mahmud-shahedi-14bb14374/
+**🔗 LinkedIn**: https://www.linkedin.com/in/mahmud-shahedi/
 
 ## 🤝 Contributing
 
